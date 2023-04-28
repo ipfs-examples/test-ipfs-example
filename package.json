@@ -1,0 +1,52 @@
+{
+  "name": "test-ipfs-example",
+  "version": "3.0.0",
+  "description": "Utilities to test ipfs examples",
+  "type": "module",
+  "keywords": [
+    "test",
+    "examples",
+    "ipfs"
+  ],
+  "bugs": {
+    "url": "https://github.com/ipfs-examples/test-ipfs-example/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipfs-examples/test-ipfs-example.git"
+  },
+  "license": "MIT",
+  "exports": {
+    "./browser": {
+      "types": "./dist/src/browser/index.d.ts",
+      "import": "./dist/src/browser/index.js"
+    },
+    "./node": {
+      "types": "./dist/src/node/index.d.ts",
+      "import": "./dist/src/node/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "aegir clean",
+    "lint": "aegir lint",
+    "dep-check": "aegir dep-check",
+    "build": "aegir build",
+    "test": "aegir test -t browser -t webworker",
+    "test:chrome": "aegir test -t browser --cov",
+    "test:chrome-webworker": "aegir test -t webworker",
+    "release": "aegir release",
+    "docs": "aegir docs"
+  },
+  "dependencies": {
+    "execa": "^6.0.0",
+    "fs-extra": "^10.1.0",
+    "polka": "^0.5.2",
+    "sirv": "^2.0.2",
+    "stoppable": "^1.1.0",
+    "uint8arrays": "^3.0.0",
+    "which": "^2.0.2"
+  },
+  "devDependencies": {
+    "aegir": "^39.0.3"
+  }
+}
