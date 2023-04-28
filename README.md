@@ -1,7 +1,7 @@
 # test-ipfs-example <!-- omit in toc -->
 
 [![codecov](https://img.shields.io/codecov/c/github/ipfs-examples/test-ipfs-example.svg?style=flat-square)](https://codecov.io/gh/ipfs-examples/test-ipfs-example)
-[![CI](https://img.shields.io/github/actions/workflow/status/ipfs-examples/test-ipfs-example/js-test-and-release.yml?branch=master\&style=flat-square)](https://github.com/ipfs-examples/test-ipfs-example/actions/workflows/js-test-and-release.yml?query=branch%3Amaster)
+[![CI](https://img.shields.io/github/actions/workflow/status/ipfs-examples/test-ipfs-example/js-test-and-release.yml?branch=main\&style=flat-square)](https://github.com/ipfs-examples/test-ipfs-example/actions/workflows/js-test-and-release.yml?query=branch%3Amain)
 
 > A test suite for testing examples using playwright for browsers and simple output matching for node
 
@@ -44,7 +44,6 @@ Run it from your package.json
 ```
 
 ### Browser tests
-
 
 To run browser tests, create a test file similar to:
 
