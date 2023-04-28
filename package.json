@@ -164,14 +164,18 @@
     "@types/polka": "^0.5.4",
     "@types/stoppable": "^1.1.1",
     "@types/which": "^3.0.0",
-    "execa": "^6.0.0",
+    "execa": "^7.1.1",
     "polka": "^0.5.2",
     "sirv": "^2.0.2",
     "stoppable": "^1.1.0",
-    "uint8arrays": "^3.0.0",
-    "which": "^2.0.2"
+    "uint8arrays": "^4.0.3",
+    "which": "^3.0.0"
   },
   "devDependencies": {
     "aegir": "^39.0.3"
+  },
+  "bin": {
+    "test-browser-example": "./bin/test-browser-example.js",
+    "test-node-example": "./bin/test-node-example.js"
   }
 }

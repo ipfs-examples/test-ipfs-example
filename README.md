@@ -38,7 +38,7 @@ Run it from your package.json
 ```json
 {
   "scripts": {
-    "test": "node my-test.spec.js"
+    "test": "test-node-example my-test.spec.js"
   }
 }
 ```
@@ -80,7 +80,7 @@ Run it from your package.json
 ```json
 {
   "scripts": {
-    "test": "playwright test ./my-test.spec.js"
+    "test": "test-browser-example ./my-test.spec.js"
   }
 }
 ```
