@@ -46,7 +46,7 @@ Run it from your package.json
 ### Browser tests
 
 
-To run node js tests, create a test file similar to:
+To run browser tests, create a test file similar to:
 
 ```js
 import { setup, expect } from 'test-ipfs-example/browser'
