@@ -1,15 +1,34 @@
 
-export { default as servers } from './servers.js'
-export { default as daemons } from './daemons.js'
+import { test, expect, type TestType, type PlaywrightTestArgs, type PlaywrightWorkerArgs, type PlaywrightWorkerOptions } from '@playwright/test'
+import { servers } from './servers.js'
 
-import { test, expect } from '@playwright/test'
-import { playwright } from 'test-util-ipfs-example'
+export interface ServerConfig {
+  port?: number
+  host?: string
+  path: string
+}
 
-// Setup
-const play = test.extend({
-  ...playwright.servers()
-})
+export interface TestOptions {
+  servers?: ServerConfig[]
+  explicitStop?: boolean
+}
 
-export { play }
-export { test }
+export interface ServerFixture {
+  server: any
+  url: string
+  stop: () => Promise<void>
+}
+
+export interface TestArgs extends PlaywrightTestArgs {
+  servers: ServerFixture[]
+}
+
+export type BrowserTest = TestType<TestArgs, PlaywrightWorkerArgs & PlaywrightWorkerOptions>
+
+export function setup (opts: TestOptions = {}): BrowserTest {
+  return test.extend({
+    ...servers(opts.servers ?? [], opts.explicitStop ?? false)
+  })
+}
+
 export { expect }

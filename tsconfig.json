@@ -4,6 +4,10 @@
     "outDir": "dist"
   },
   "include": [
-    "src"
+    "src",
+    "test"
+  ],
+  "exclude": [
+    "test/fixtures/browser/test.spec.js"
   ]
 }

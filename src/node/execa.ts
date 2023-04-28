@@ -1,39 +1,38 @@
 
-import fs from 'fs-extra'
-import { execa } from 'execa'
+import fs from 'node:fs'
+import { execa, type ExecaChildProcess, type Options } from 'execa'
 import which from 'which'
 
-async function isExecutable(command) {
+function isExecutable (command: string): boolean {
   try {
-    await fs.access(command, fs.constants.X_OK, () => {});
-
-    return true;
-  } catch (err) {
-    if (err.code === "ENOENT") {
-      return await isExecutable(await which(command));
+    fs.accessSync(command, fs.constants.X_OK)
+    return true
+  } catch (err: any) {
+    if (err.code === 'ENOENT') {
+      return isExecutable(which.sync(command))
     }
 
-    if (err.code === "EACCES") {
-      return false;
+    if (err.code === 'EACCES') {
+      return false
     }
 
-    throw err;
+    throw err
   }
 }
 
-async function execaUtil(command, args = [], opts = {}, callback = null) {
-  if (!(await isExecutable(command))) {
-    args.unshift(command);
-    command = "node";
+function execaUtil (command: string, args: string[] = [], opts: Options<string> = {}, callback?: (proc: ExecaChildProcess<string>) => void): ExecaChildProcess<string> {
+  if (!isExecutable(command)) {
+    args.unshift(command)
+    command = 'node'
   }
 
-  const proc = execa(command, args, { ...opts, all: true });
+  const proc = execa(command, args, { ...opts, all: true })
 
-  if (callback) {
+  if (callback != null) {
     callback(proc)
   }
 
   return proc
 }
 
-export default execaUtil;
+export default execaUtil
