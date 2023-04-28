@@ -38,7 +38,7 @@ Run it from your package.json
 ```json
 {
   "scripts": {
-    "test": "test-node-example my-test.spec.js"
+    "test": "test-node-example ./my-test.spec.js"
   }
 }
 ```
