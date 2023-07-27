@@ -170,7 +170,7 @@
     "uint8arrays": "^4.0.3"
   },
   "devDependencies": {
-    "aegir": "^39.0.3"
+    "aegir": "^40.0.1"
   },
   "bin": {
     "test-browser-example": "./bin/test-browser-example.js",
