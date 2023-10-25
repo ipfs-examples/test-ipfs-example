@@ -1,26 +1,39 @@
+import pDefer from 'p-defer'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
 import execaUtil from './execa.js'
-import type { DefaultEncodingOption, EncodingOption, Options } from 'execa'
+import type { DefaultEncodingOption, EncodingOption, ExecaChildProcess, Options } from 'execa'
 
 export interface WaitForOutputOptions<EncodingType extends EncodingOption = DefaultEncodingOption> extends Options<EncodingType> {
   timeout?: number
 }
 
+export interface MatchOutputResult {
+  matches: string[]
+  process: ExecaChildProcess<string>
+}
+
 /**
- * Starts a process and waits for the passed string to appear in the output.
- * When this happens the process is killed.
+ * Starts a process and matches the output against the passed regex. The match
+ * result and process are returned, the user must manually kill the process
+ * when they are finished with it.
  */
-export async function waitForOutput (expectedOutput: string, command: string, args: string[] = [], opts: WaitForOutputOptions = {}): Promise<void> {
+export async function matchOutput (matcher: RegExp, command: string, args: string[] = [], opts: WaitForOutputOptions = {}): Promise<MatchOutputResult> {
+  const foundMatch = pDefer<string[]>()
+
   const proc = execaUtil(command, args, { ...opts, all: true }, (exec) => {
     exec.all?.on('data', (data) => {
       process.stdout.write(data)
       output += uint8ArrayToString(data)
 
-      if (output.includes(expectedOutput)) {
-        foundExpectedOutput = true
-        exec.kill()
-        cancelTimeout()
+      const matches = matcher.exec(output)
+
+      if (matches == null) {
+        return
       }
+
+      foundExpectedOutput = true
+      foundMatch.resolve(matches)
+      cancelTimeout()
     })
   })
 
@@ -33,7 +46,7 @@ export async function waitForOutput (expectedOutput: string, command: string, ar
     const timeout = setTimeout(() => {
       reject(
         new Error(
-          `Did not see "${expectedOutput}" in output from "${[command]
+          `Did not match "${matcher}" in output from "${[command]
             .concat(args)
             .join(' ')}" after ${time / 1000}s`
         )
@@ -50,8 +63,14 @@ export async function waitForOutput (expectedOutput: string, command: string, ar
     }
   })
 
+  let result: string[] | undefined
+
   try {
-    await Promise.race([proc, timeoutPromise])
+    const res = await Promise.race([foundMatch.promise, timeoutPromise])
+
+    if (res != null) {
+      result = res
+    }
   } catch (err: any) {
     if (err.killed == null) {
       throw err
@@ -61,9 +80,18 @@ export async function waitForOutput (expectedOutput: string, command: string, ar
   if (!foundExpectedOutput) {
     cancelTimeout()
     throw new Error(
-      `Did not see "${expectedOutput}" in output from "${[command]
+      `Did not match "${matcher}" in output from "${[command]
         .concat(args)
         .join(' ')}"`
     )
+  }
+
+  if (result == null) {
+    throw new Error('Process output was undefined')
+  }
+
+  return {
+    process: proc,
+    matches: result
   }
 }

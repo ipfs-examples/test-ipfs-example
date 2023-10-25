@@ -154,8 +154,8 @@
     "lint": "aegir lint",
     "dep-check": "aegir dep-check",
     "build": "aegir build --bundle false",
-    "test": "npm run test:node",
-    "test:node": "aegir test -t node -f ./dist/test/*.spec.js",
+    "test:node": "aegir test -t node -f ./dist/test/node.spec.js",
+    "test:chrome": "aegir test -t node -f ./dist/test/browser.spec.js",
     "release": "aegir release",
     "docs": "aegir docs"
   },
@@ -163,14 +163,15 @@
     "@playwright/test": "^1.33.0",
     "@types/polka": "^0.5.4",
     "@types/stoppable": "^1.1.1",
-    "execa": "^7.1.1",
+    "execa": "^8.0.1",
+    "p-defer": "^4.0.0",
     "polka": "^0.5.2",
     "sirv": "^2.0.2",
     "stoppable": "^1.1.0",
     "uint8arrays": "^4.0.3"
   },
   "devDependencies": {
-    "aegir": "^39.0.3"
+    "aegir": "^41.0.8"
   },
   "bin": {
     "test-browser-example": "./bin/test-browser-example.js",
