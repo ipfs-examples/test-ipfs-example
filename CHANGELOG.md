@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.0.0...v1.1.0) (2023-10-25)
+
+
+### Features
+
+* add output matcher ([#6](https://github.com/ipfs-examples/test-ipfs-example/issues/6)) ([388f0c7](https://github.com/ipfs-examples/test-ipfs-example/commit/388f0c7e5785d6f219394fd286814318b1d67af7))
+
 ## 1.0.0 (2023-04-28)
 
 
