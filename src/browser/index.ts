@@ -1,4 +1,3 @@
-
 import { test, expect, type TestType, type PlaywrightTestArgs, type PlaywrightWorkerArgs, type PlaywrightWorkerOptions } from '@playwright/test'
 import { servers } from './servers.js'
 
@@ -16,7 +15,7 @@ export interface TestOptions {
 export interface ServerFixture {
   server: any
   url: string
-  stop: () => Promise<void>
+  stop(): Promise<void>
 }
 
 export interface TestArgs extends PlaywrightTestArgs {
