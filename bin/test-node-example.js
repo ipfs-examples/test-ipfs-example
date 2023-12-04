@@ -3,7 +3,9 @@
 
 import { execa } from 'execa'
 
-// run tests
-await execa('node', [...process.argv.slice(2)], {
-  stdio: 'inherit'
-})
+for (const file of process.argv.slice(2)) {
+  // run test
+  await execa('node', [file], {
+    stdio: 'inherit'
+  })
+}

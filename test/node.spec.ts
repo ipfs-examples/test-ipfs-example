@@ -20,4 +20,13 @@ describe('node', function () {
       stdio: 'inherit'
     })
   })
+
+  it('should test multiple files', async () => {
+    await execa('./bin/test-node-example.js', [
+      './test/fixtures/node/wait-for-output.spec.js',
+      './test/fixtures/node/match-output.spec.js'
+    ], {
+      stdio: 'inherit'
+    })
+  })
 })
