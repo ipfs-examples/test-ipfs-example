@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.1.0...v1.2.0) (2023-12-04)
+
+
+### Features
+
+* support multiple test files ([#7](https://github.com/ipfs-examples/test-ipfs-example/issues/7)) ([11c7502](https://github.com/ipfs-examples/test-ipfs-example/commit/11c75021c67ca480e57ff35facca8e91703d2cc4))
+
 ## [1.1.0](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.0.0...v1.1.0) (2023-10-25)
 
 
