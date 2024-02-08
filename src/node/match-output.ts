@@ -23,7 +23,8 @@ export async function matchOutput (matcher: RegExp, command: string, args: strin
   const proc = execaUtil(command, args, { ...opts, all: true }, (exec) => {
     exec.all?.on('data', (data) => {
       process.stdout.write(data)
-      output += uint8ArrayToString(data)
+
+      output += typeof data === 'string' ? data : uint8ArrayToString(data)
 
       const matches = matcher.exec(output)
 
