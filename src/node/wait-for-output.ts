@@ -14,7 +14,7 @@ export async function waitForOutput (expectedOutput: string, command: string, ar
   const proc = execaUtil(command, args, { ...opts, all: true }, (exec) => {
     exec.all?.on('data', (data) => {
       process.stdout.write(data)
-      output += uint8ArrayToString(data)
+      output += typeof data === 'string' ? data : uint8ArrayToString(data)
 
       if (output.includes(expectedOutput)) {
         foundExpectedOutput = true
