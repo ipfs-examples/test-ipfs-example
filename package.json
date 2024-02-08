@@ -11,14 +11,18 @@
   "bugs": {
     "url": "https://github.com/ipfs-examples/test-ipfs-example/issues"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "keywords": [
     "examples",
     "ipfs",
     "test"
   ],
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
+  "bin": {
+    "test-browser-example": "./bin/test-browser-example.js",
+    "test-node-example": "./bin/test-node-example.js"
   },
   "type": "module",
   "types": "./dist/src/index.d.ts",
@@ -61,6 +65,7 @@
   "eslintConfig": {
     "extends": "ipfs",
     "parserOptions": {
+      "project": true,
       "sourceType": "module"
     }
   },
@@ -172,9 +177,5 @@
   },
   "devDependencies": {
     "aegir": "^42.2.3"
-  },
-  "bin": {
-    "test-browser-example": "./bin/test-browser-example.js",
-    "test-node-example": "./bin/test-node-example.js"
   }
 }
