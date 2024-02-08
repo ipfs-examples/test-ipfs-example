@@ -1,9 +1,16 @@
+import { platform } from 'node:os'
 import { execa } from 'execa'
 
 describe('bun', function () {
   // slow CI is slow
   this.timeout(540000)
   this.slow(60000)
+
+  if (platform() === 'win32') {
+    it.skip('bun does not run on windows', () => {})
+
+    return
+  }
 
   it('should match output', async () => {
     await execa('./bin/test-node-example.js', [
