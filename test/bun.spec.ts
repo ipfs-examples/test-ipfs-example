@@ -6,12 +6,6 @@ describe('bun', function () {
   this.timeout(540000)
   this.slow(60000)
 
-  if (platform() === 'win32') {
-    it.skip('bun does not run on windows', () => {})
-
-    return
-  }
-
   it('should match output', async () => {
     await execa('./bin/test-node-example.js', [
       './test/fixtures/node/match-output.spec.js'
