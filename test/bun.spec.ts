@@ -1,4 +1,3 @@
-import { platform } from 'node:os'
 import { execa } from 'execa'
 
 describe('bun', function () {
