@@ -1,3 +1,16 @@
+## [1.2.1](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.2.0...v1.2.1) (2024-02-08)
+
+
+### Trivial Changes
+
+* update project ([e7db256](https://github.com/ipfs-examples/test-ipfs-example/commit/e7db256c7a2ae5e0bc450f8fb5b739a1a18bd1b9))
+
+
+### Dependencies
+
+* bump uint8arrays from 4.0.10 to 5.0.1 ([#9](https://github.com/ipfs-examples/test-ipfs-example/issues/9)) ([1c327d1](https://github.com/ipfs-examples/test-ipfs-example/commit/1c327d1d0d35c8818b3c6f757ba0ac4224eb8a21))
+* **dev:** bump aegir from 41.3.5 to 42.2.3 ([#17](https://github.com/ipfs-examples/test-ipfs-example/issues/17)) ([d18208e](https://github.com/ipfs-examples/test-ipfs-example/commit/d18208e20bf8f3b7283c1f96190e480fafc791fc))
+
 ## [1.2.0](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.1.0...v1.2.0) (2023-12-04)
 
 
