@@ -1,3 +1,15 @@
+## [1.3.0](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.2.1...v1.3.0) (2024-04-23)
+
+
+### Features
+
+* support testing on bun ([#18](https://github.com/ipfs-examples/test-ipfs-example/issues/18)) ([73085b7](https://github.com/ipfs-examples/test-ipfs-example/commit/73085b73586330cf9980568ee2766b64e945b4f3))
+
+
+### Trivial Changes
+
+* update workflow ([b3f87d5](https://github.com/ipfs-examples/test-ipfs-example/commit/b3f87d54832d97661396bed2b96b91081028e345))
+
 ## [1.2.1](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.2.0...v1.2.1) (2024-02-08)
 
 
