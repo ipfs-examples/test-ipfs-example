@@ -157,9 +157,9 @@
   "scripts": {
     "clean": "aegir clean",
     "lint": "aegir lint",
-    "dep-check": "aegir dep-check",
+    "dep-check": "aegir dep-check -i bun",
     "build": "aegir build --bundle false",
-    "test:node": "aegir test -t node -f ./dist/test/node.spec.js",
+    "test:node": "aegir test -t node -f ./dist/test/node.spec.js -f ./dist/test/bun.spec.js",
     "test:chrome": "aegir test -t node -f ./dist/test/browser.spec.js",
     "release": "aegir release",
     "docs": "aegir docs"
@@ -176,6 +176,7 @@
     "uint8arrays": "^5.0.1"
   },
   "devDependencies": {
-    "aegir": "^42.2.3"
+    "aegir": "^42.2.3",
+    "bun": "^1.1.3"
   }
 }
