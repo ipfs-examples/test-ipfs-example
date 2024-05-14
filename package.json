@@ -168,7 +168,7 @@
     "@playwright/test": "^1.33.0",
     "@types/polka": "^0.5.4",
     "@types/stoppable": "^1.1.1",
-    "execa": "^8.0.1",
+    "execa": "^9.1.0",
     "p-defer": "^4.0.0",
     "polka": "^0.5.2",
     "sirv": "^2.0.2",
