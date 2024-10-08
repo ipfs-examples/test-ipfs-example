@@ -1,3 +1,9 @@
+## [1.3.3](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.3.2...v1.3.3) (2024-10-08)
+
+### Bug Fixes
+
+* log error when installing browsers ([1818289](https://github.com/ipfs-examples/test-ipfs-example/commit/1818289ee3bf712526463790eb67b08bc18c3b5a))
+
 ## [1.3.2](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.3.1...v1.3.2) (2024-10-08)
 
 ### Bug Fixes
