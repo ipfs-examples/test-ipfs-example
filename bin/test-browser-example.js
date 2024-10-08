@@ -9,9 +9,7 @@ try {
     stdio: 'inherit'
   })
 } catch (err) {
-  if (!err.message.includes('Could not get lock')) {
-    throw err
-  }
+  console.error('error installing browsers', err)
 }
 
 for (const file of process.argv.slice(2)) {
