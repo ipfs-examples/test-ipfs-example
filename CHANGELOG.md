@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.3.0...v1.3.1) (2024-10-08)
+
+### Dependencies
+
+* **dev:** bump aegir from 42.2.11 to 44.1.0 ([#29](https://github.com/ipfs-examples/test-ipfs-example/issues/29)) ([c8cadcb](https://github.com/ipfs-examples/test-ipfs-example/commit/c8cadcb51da649b3b80148c7f94caf8ed3a844f3))
+
 ## [1.3.0](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.2.1...v1.3.0) (2024-04-23)
 
 
