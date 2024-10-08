@@ -1,3 +1,9 @@
+## [1.3.2](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.3.1...v1.3.2) (2024-10-08)
+
+### Bug Fixes
+
+* tolerate failure to install browsers ([#30](https://github.com/ipfs-examples/test-ipfs-example/issues/30)) ([67b4dbd](https://github.com/ipfs-examples/test-ipfs-example/commit/67b4dbdea07496947939606b40efef76ab63d54b))
+
 ## [1.3.1](https://github.com/ipfs-examples/test-ipfs-example/compare/v1.3.0...v1.3.1) (2024-10-08)
 
 ### Dependencies
