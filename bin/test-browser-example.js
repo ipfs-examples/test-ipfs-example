@@ -13,6 +13,7 @@ try {
     throw err
   }
 }
+
 for (const file of process.argv.slice(2)) {
   // run test
   await execa('npx', ['playwright', 'test', file], {
