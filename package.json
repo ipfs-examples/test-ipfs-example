@@ -176,7 +176,7 @@
     "uint8arrays": "^5.0.1"
   },
   "devDependencies": {
-    "aegir": "^44.1.0",
+    "aegir": "^47.0.26",
     "bun": "^1.1.3"
   }
 }
